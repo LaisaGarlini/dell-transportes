@@ -1,16 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-
-// const geistSans = localFont({
-//   src: "./fonts/GeistVF.woff",
-//   variable: "--font-geist-sans",
-//   weight: "100 900",
-// });
-// const geistMono = localFont({
-//   src: "./fonts/GeistMonoVF.woff",
-//   variable: "--font-geist-mono",
-//   weight: "100 900",
-// });
+import MenuVertical from "../../componentes/MenuVertical";
 
 export const metadata: Metadata = {
   title: "DELL Transportes",
@@ -30,8 +20,19 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="font-sans">
-        {children}
+      <body>
+        <div className="font-sans overflow-hidden flex flex-col p-2 bg-branco h-svh">
+          <div className="bg-verdeMedioClaro w-[100%] rounded-md p-2 text-center mx-auto flex flex-row items-center justify-between">
+            <div className="w-1/4 text-left">
+              <h1 className="text-2xl text-white font-semibold">DELL Transportes</h1>
+            </div>
+            <MenuVertical />
+          </div>
+
+          <div className="mt-1 bg-verdeMedioClaro w-full rounded-md p-2 flex-grow h-[500px]">
+            {children}
+          </div>
+      </div>
       </body>
     </html>
   );
